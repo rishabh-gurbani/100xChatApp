@@ -1,0 +1,268 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Global styles */
+  body {
+  font-family: 'SF Pro', 'Helvetica Neue', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Chat app container */
+.chat-app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar (active users) */
+.sidebar {
+  width: 30%; /* Adjusted to occupy a little more space */
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.active-users {
+  padding: 0px 30px;
+  margin-top: 20px; 
+}
+
+.contacts-list {
+  list-style: none;
+  padding: 20px;
+}
+
+.contact-name {
+  display: block;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-name:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Chat area */
+.chat-area {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.message-container-sent, .message-container-received {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: end;
+}
+
+.message-container-sent {
+  justify-content: flex-end; 
+}
+
+.message-container-received {
+  justify-content: flex-start;
+}
+
+.message-sent, .message-received {
+  padding: 10px 15px;
+  border-radius: 12px;
+  word-wrap: break-word;
+  display: inline-block;
+}
+
+.message-sent {
+  background: linear-gradient(to right, #FFA500, #FF8C00);
+  color: #fff;
+  border-bottom-right-radius: 0;
+}
+
+.message-received {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05));
+  color: #333;
+  border-bottom-left-radius: 0;
+}
+
+.message-user {
+  font-size: 10px;
+  font-weight: bolder;
+  margin: 0px 0px 2px 0px;
+}
+
+.message-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #555;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.command{
+  font-style: italic;
+}
+
+
+/* Input area */
+.messages-input {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+#message-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.05);
+  outline: none; /* Remove default outline */
+}
+
+#message-input:focus {
+  border: 2px solid #FFA500; 
+}
+
+#send-button {
+  margin-left: 10px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(to right, #FFA500, #FF8C00);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#send-button:hover {
+  background: linear-gradient(to right, #FF8C00, #FFA500);
+}
+
+
+.typing-users {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+}
+
+.typing-indicator {
+  width: 7px;
+  height: 7px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  animation: pulse 1s infinite;
+  margin-right: 5px;
+}
+
+.typing-text{
+  font-size: small;
+  font-style: italic;
+}
+
+.typing-indicators {
+  display: flex;
+  margin-left:15px;
+  margin-right: 10px;
+}
+
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.typing-indicator:nth-child(1) {
+  animation: pulse 1s infinite 0.2s; /* Delay the animation by 0.2 seconds */
+}
+
+.typing-indicator:nth-child(2) {
+  animation: pulse 1s infinite 0.4s; /* Delay the animation by 0.4 seconds */
+}
+
+.typing-indicator:nth-child(3) {
+  animation: pulse 1s infinite 0.6s; /* Delay the animation by 0.6 seconds */
+}
+
+.floating-commands-container {
+  position: absolute;
+  bottom: 20px; /* Adjust this value as needed */
+  left: 20px; /* Adjust this value as needed */
+  right: 20px; /* Adjust this value as needed */
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.command-block {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.command-block:hover {
+  background-color: rgba(200, 200, 200, 0.8); /* Greyer background on hover */
+}
+
+.command-definition {
+  font-size: small;;
+  background: linear-gradient(to right, #FFA500, #FF8C00);
+  color: #fff;
+  border-radius: 8px;
+  padding: 4px 8px;
+  display: inline-block;
+  margin-right: 10px; 
+}
+
+.command-prompt {
+  font-size: small;
+  font-style: italic;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>100x Chat</title>
+</head>
+<body>
+  <div class="chat-app">
+    <aside class="sidebar">
+      <header class="sidebar-header">
+        <h2>Online Users</h2>
+      </header>
+      <h5 class = "active-users">
+        <!-- Count updated here -->
+      </h5>
+      <ul class="contacts-list">
+        <!-- Active users updated here -->
+      </ul>
+    </aside>
+    <section class="chat-area">
+      <header class="chat-header">
+        <h2>100x Chat</h2>
+      </header>
+      <div class="messages">
+        <!-- Messages displayed here -->
+        <div class="message-container-sent">
+          <div class = "message-sent">
+            Hiiiiiiii
+          </div>
+        </div>
+        <div class="message-container-received">
+          <div class="message-avatar">
+            R
+          </div>
+          <div class = "message-received">
+            <div class = "message-user">
+              Rishabh
+            </div>
+            <div class = "message">
+              Helloooo
+            </div>
+          </div>
+        </div>
+
+        <div class="floating-commands-container" style="display: none;">
+          <!-- Floating Messages Here -->
+        </div>
+
+      </div>
+      <div class="typing-users" style="display: none;">
+        <div class="typing-indicators">
+          <div class="typing-indicator"></div>
+          <div class="typing-indicator"></div>
+          <div class="typing-indicator"></div>
+        </div>
+        <div class="typing-text"></div>
+      </div>
+      <div class="messages-input">
+        <input
+          type="text"
+          id="message-input"
+          placeholder="Send a message in 100x chat">
+        <button id="send-button">Send</button>
+      </div>
+    </section>
+  </div>
+  <script src = /socket.io/socket.io.js></script>
+  <script src = "script.js"></script>
+</body>
+</html>
