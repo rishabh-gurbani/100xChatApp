@@ -312,4 +312,8 @@ function showCommandsSuggestions(commands) {
         commandSuggestionsContainer.appendChild(suggestionItem);
     });
 }
+
+function demo(){
+    console.log("hi");
+}
   
